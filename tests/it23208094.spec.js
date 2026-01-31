@@ -10,6 +10,7 @@ test.describe('Swift Translator Tests - Run Sequentially', () => {
     await page.goto('https://www.swifttranslator.com/');
   });
 
+  //Positive
   test('Pos_Fun_0001 - simple sentence', async ({ page }) => {
     await page.fill('textarea', 'mama paadam karanda yanavaa.');
     const outputLocator = page.locator('div.whitespace-pre-wrap').first();
@@ -211,6 +212,7 @@ test.describe('Swift Translator Tests - Run Sequentially', () => {
     expect(output).toContain('ඔයාලා එනවනම් කියන්ඩ මට 2.00PM වෙද්දි එතනට එන්ඩ පුලුවන්.');
   });
   
+//Negative
 
   test('Neg_Fun_0001 - simple sentence', async ({ page }) => {
     await page.fill('textarea', 'mamavaedatika karanda patangaththaa.');
@@ -292,6 +294,7 @@ test.describe('Swift Translator Tests - Run Sequentially', () => {
     expect(output).toContain('ඔය game එක මට ගෙදරට ගෙනත් දෙන්ඩ පුලුවන්ද.');
   });
 
+  //UI Testing
   test('Pos_UI_0001 - clear button reset input and output.', async ({ page }) => {
 
   await page.goto('https://www.swifttranslator.com/');
