@@ -1,8 +1,10 @@
 import { test, expect } from '@playwright/test';
 
 test.describe('Swift Translator Tests - Run Sequentially', () => {
-  // This will run tests in order, even if one fails
-  test.describe.configure({ mode: 'serial' });
+
+  test.beforeEach(async ({ page }) => {
+    await page.goto('https://www.swifttranslator.com/');
+  });
 
   test.beforeEach(async ({ page }) => {
     await page.goto('https://www.swifttranslator.com/');
