@@ -10,7 +10,7 @@ test.describe('Swift Translator Tests - Run Sequentially', () => {
     await page.goto('https://www.swifttranslator.com/');
   });
 
-  //Positive Tests Cases
+  //Positive
   test('Pos_Fun_0001 - simple sentence', async ({ page }) => {
     await page.fill('textarea', 'mama paadam karanda yanavaa.');
     const outputLocator = page.locator('div.whitespace-pre-wrap').first();
